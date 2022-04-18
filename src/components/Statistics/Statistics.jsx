@@ -6,7 +6,7 @@ export const Statistics = ({ title, stats }) => {
     
     return (
         <SectionStatistics className="statistics">
-        <Title className="title">{title}</Title>
+            {title && <Title className="title">{title}</Title>}
             <StatisticsList className="stat-list">
                 {
                     stats.map(({ id, label, percentage }) => (
@@ -21,7 +21,7 @@ export const Statistics = ({ title, stats }) => {
 }
 
 Statistics.propTypes = {
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   stats: PropTypes.arrayOf(PropTypes.exact({
     id: PropTypes.string.isRequired,
     label: PropTypes.string.isRequired,

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { Card, Avatar, ProfileInfo, InfoItems, FotoProfile, Name, Location, Tag, Label, Quantity } from './Profile.styled';
 
-export const Profile = ({ username, tag, location, avatar, stats }) => {
+export const Profile = ({ username, tag, location, avatar, stats:{likes, followers, views} }) => {
   return (
     <Card className="profile">
     <FotoProfile className="description">
@@ -18,15 +18,15 @@ export const Profile = ({ username, tag, location, avatar, stats }) => {
     <ProfileInfo className="stats">
       <InfoItems>
         <Label className="label">Followers</Label>
-        <Quantity className="quantity">{stats.followers}</Quantity>
+        <Quantity className="quantity">{followers}</Quantity>
       </InfoItems>
       <InfoItems>
         <Label className="label">Views</Label>
-        <Quantity className="quantity">{stats.views}</Quantity>
+        <Quantity className="quantity">{views}</Quantity>
       </InfoItems>
       <InfoItems>
         <Label className="label">Likes</Label>
-        <Quantity className="quantity">{stats.likes}</Quantity>
+        <Quantity className="quantity">{likes}</Quantity>
       </InfoItems>
     </ProfileInfo>
   </Card> 
